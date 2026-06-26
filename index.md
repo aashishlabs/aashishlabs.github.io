@@ -1,7 +1,20 @@
-# Hi, I'm Aashish
+# Hi, I'm Aashish 👋
 
-Senior Product Manager | Digital Banking | Payments | AI
+## Senior Product Manager
 
-Welcome to my portfolio.
+I build digital products in:
 
-This website is currently under construction.
+- Digital Banking
+- Payments
+- Lending
+- AI Products
+
+---
+
+### Currently
+
+Building my professional portfolio on GitHub.
+
+---
+
+**Thanks for visiting!**
