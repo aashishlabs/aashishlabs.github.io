@@ -1,26 +1,31 @@
 # Hi, I'm Aashish 👋
 
-## Senior Product Manager
+Senior Product Manager | Digital Banking | Payments | AI
 
-I build digital products in:
+Welcome to my professional portfolio.
+
+---
+
+## Navigation
+
+- [About](about)
+- [Case Studies](case-studies)
+- [Projects](projects)
+- [Contact](contact)
+
+---
+
+## Expertise
 
 - Digital Banking
-- Payments
-- Lending
+- UPI
+- BBPS
+- Payment Gateway
+- Product Strategy
 - AI Products
+- Lending
+- Fintech
 
 ---
 
-### Currently
-
-Building my professional portfolio on GitHub.
-
----
-
-**Thanks for visiting!**
-_Last updated from VS Code on my local machine._
-_Another testing update on my local machine._
-
-## About Branch
-
-This line exists only in the feature branch.
+Thank you for visiting my portfolio.
