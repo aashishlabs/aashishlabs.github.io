@@ -34,6 +34,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <script>
+    (() => {
+      const storedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = storedTheme || (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
+
 
   <link rel="stylesheet" href="assets/css/style.css?v=1.0" />
 </head>
@@ -55,6 +63,27 @@
         <a href="assets/files/Aashish_Telgote_Resume.pdf" class="nav__resume" target="_blank" rel="noopener">Resume ↗</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="theme-toggle__track" aria-hidden="true">
+          <span class="theme-toggle__thumb">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20.98 12.74A8.5 8.5 0 0 1 11.26 3.02 7.5 7.5 0 1 0 20.98 12.74Z"></path>
+            </svg>
+          </span>
+        </span>
+      </button>
+
       <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
@@ -682,7 +711,24 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll(); // run on load
 
-      // ── Nav: mobile toggle ──────────────────────
+      // Theme toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const setTheme = theme => {
+        const isDark = theme === 'dark';
+        document.documentElement.dataset.theme = theme;
+        localStorage.setItem('theme', theme);
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+        themeToggle.setAttribute('aria-label', 'Switch to ' + (isDark ? 'light' : 'dark') + ' mode');
+      };
+
+      setTheme(document.documentElement.dataset.theme || 'light');
+
+      themeToggle.addEventListener('click', () => {
+        const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        setTheme(nextTheme);
+      });
+
+// ── Nav: mobile toggle ──────────────────────
       const toggle = document.getElementById('navToggle');
       const navLinks = document.getElementById('navLinks');
 
