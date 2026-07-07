@@ -1,2 +1,78 @@
-# aashishlabs.github.io
-Personal portfolio website
+# Aashish Telgote | Technical Product Portfolio
+
+A mobile-first portfolio for an AI-enabled Technical Product Manager working across fintech, digital banking, payments, lending, product strategy, and scalable platform delivery.
+
+**Live portfolio:** [https://aashishlabs.github.io](https://aashishlabs.github.io)
+
+## What This Portfolio Communicates
+
+This site is designed to give recruiters, hiring managers, product leaders, and collaborators a fast view of how I think, build, and measure product work.
+
+It highlights:
+
+- Product leadership across fintech, payments, digital banking, lending, and AI-enabled workflows
+- Technical fluency across APIs, system integrations, SQL, Python, product analytics, and delivery tooling
+- Experience translating business goals into roadmaps, PRDs, delivery plans, and measurable product outcomes
+- Case studies focused on impact, scale, compliance, automation, and customer/business value
+- A mobile-friendly reading experience for visitors coming from LinkedIn, resumes, referrals, and GitHub
+
+## Portfolio Sections
+
+- **Hero:** concise positioning as an AI-enabled Product Leader
+- **About:** product philosophy, business-technical bridge, and domain context
+- **Skills:** product, technical, tools, and fintech capabilities with mobile expand/collapse behavior
+- **Experience:** timeline of roles, organizations, and product outcomes
+- **Projects:** selected case studies with measurable impact
+- **Certifications & Education:** continuous learning and formal background
+- **Contact:** email, LinkedIn, phone, and downloadable resume
+
+## Product & Technical Focus
+
+The portfolio reflects the way I approach product management:
+
+- Start with the business problem and measurable outcome
+- Understand the system architecture, API flows, data, and operational constraints
+- Convert ambiguity into clear product requirements and execution plans
+- Collaborate with engineering, design, risk, operations, compliance, and leadership
+- Ship, measure, learn, and improve
+
+## Tech Stack
+
+This is a lightweight static site built for performance, clarity, and maintainability.
+
+- HTML5
+- CSS3 with responsive breakpoints
+- Vanilla JavaScript
+- GitHub Pages hosting
+- Google Analytics 4 event tracking
+- Mobile-first UX refinements
+
+## Repository Structure
+
+```text
+.
+|-- index.html
+|-- assets/
+|   |-- css/
+|   |   `-- style.css
+|   |-- files/
+|   |   `-- Aashish_Telgote_Resume.pdf
+|   `-- images/
+|       |-- profile.png
+|       |-- logos/
+|       `-- favicon/
+|-- about.md
+|-- contact.md
+|-- case-studies.md
+`-- README.md
+```
+
+## Live Site
+
+Visit the portfolio here:
+
+[https://aashishlabs.github.io](https://aashishlabs.github.io)
+
+## About Me
+
+I am Aashish Telgote, a Technical Product Manager with 10+ years of experience across fintech, digital banking, payments, lending, and AI-enabled product strategy. I work at the intersection of customer problems, business outcomes, platform architecture, and execution discipline.
