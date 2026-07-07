@@ -271,6 +271,7 @@
               <span class="tag">Competitive Analysis</span>
               
             </div>
+            <button class="skill-card__more" type="button" aria-expanded="false">More</button>
           </div>
 
           <div class="skill-card reveal">
@@ -290,6 +291,7 @@
               <span class="tag">A/B Testing</span>
               <span class="tag">PDLC / SDLC</span>
             </div>
+            <button class="skill-card__more" type="button" aria-expanded="false">More</button>
           </div>
 
           <div class="skill-card reveal">
@@ -310,6 +312,7 @@
               <span class="tag">Salesforce</span>
               <span class="tag">AI Tools & LLMs</span>
             </div>
+            <button class="skill-card__more" type="button" aria-expanded="false">More</button>
           </div>
 
           <div class="skill-card skill-card--accent reveal">
@@ -331,6 +334,7 @@
               <span class="tag tag--accent">RBI Compliance</span>
               <span class="tag tag--accent">NPCI Ecosystem</span>
             </div>
+            <button class="skill-card__more" type="button" aria-expanded="false">More</button>
           </div>
 
         </div>
@@ -817,6 +821,16 @@
           toggle.setAttribute('aria-expanded', 'false');
           navLinks.classList.remove('nav__links--open');
           document.body.classList.remove('no-scroll');
+        });
+      });
+
+      // Skills: mobile expand controls
+      document.querySelectorAll('.skill-card__more').forEach(button => {
+        button.addEventListener('click', () => {
+          const card = button.closest('.skill-card');
+          const expanded = card.classList.toggle('skill-card--expanded');
+          button.setAttribute('aria-expanded', String(expanded));
+          button.textContent = expanded ? 'Less' : 'More';
         });
       });
 
