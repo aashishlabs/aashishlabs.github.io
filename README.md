@@ -16,15 +16,6 @@ It highlights:
 - Case studies focused on impact, scale, compliance, automation, and customer/business value
 - A mobile-friendly reading experience for visitors coming from LinkedIn, resumes, referrals, and GitHub
 
-## Portfolio Sections
-
-- **Hero:** concise positioning as an AI-enabled Product Leader
-- **About:** product philosophy, business-technical bridge, and domain context
-- **Skills:** product, technical, tools, and fintech capabilities with mobile expand/collapse behavior
-- **Experience:** timeline of roles, organizations, and product outcomes
-- **Projects:** selected case studies with measurable impact
-- **Certifications & Education:** continuous learning and formal background
-- **Contact:** email, LinkedIn, phone, and downloadable resume
 
 ## Product & Technical Focus
 
@@ -75,4 +66,4 @@ Visit the portfolio here:
 
 ## About Me
 
-I am Aashish Telgote, a Technical Product Manager with 10+ years of experience across fintech, digital banking, payments, lending, and AI-enabled product strategy. I work at the intersection of customer problems, business outcomes, platform architecture, and execution discipline.
+I am Aashish, an AI-Enable Technical Product Manager with 10+ years of experience across Fintech, Digital Danking, Payments, Lending, and AI-enabled product strategy. I work at the intersection of customer problems, business outcomes, platform architecture, and execution discipline.
