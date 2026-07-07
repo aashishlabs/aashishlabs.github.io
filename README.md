@@ -1,12 +1,12 @@
 # Aashish Telgote | Technical Product Portfolio
 
-AI-enabled Technical Product Manager building Fintech, Digital Banking, Payments, Lending, Product strategy, and platform products from strategy to scalable execution.
+AI-enabled Technical Product Manager building fintech, digital banking, payments, lending, product strategy, and platform products from strategy to scalable execution.
 
 **Live portfolio:** [https://aashishlabs.github.io](https://aashishlabs.github.io)
 
 ## What This Portfolio Communicates
 
-This site is designed to give Product Leaders, Collaborators, Recruiters & Hiring Managers a fast view of how I think, build, and measure product work.
+This site is designed to give product leaders, collaborators, recruiters, and hiring managers a fast view of how I think, build, and measure product work.
 
 It highlights:
 
@@ -15,7 +15,6 @@ It highlights:
 - Experience translating business goals into roadmaps, PRDs, delivery plans, and measurable product outcomes
 - Case studies focused on impact, scale, compliance, automation, and customer/business value
 - A mobile-friendly reading experience for visitors coming from LinkedIn, resumes, referrals, and GitHub
-
 
 ## Product & Technical Focus
 
@@ -66,11 +65,12 @@ Visit the portfolio here:
 
 ## About Me
 
-I am Aashish, an AI-Enable Technical Product Manager with 10+ years of experience across Fintech, Digital Banking, Payments, Lending, and AI-enabled product strategy. I work at the intersection of customer problems, business outcomes, platform architecture, and execution discipline.
-
+I am Aashish, an AI-enabled Technical Product Manager with 10+ years of experience across fintech, digital banking, payments, lending, and AI-enabled product strategy. I work at the intersection of customer problems, business outcomes, platform architecture, and execution discipline.
 
 ## Connect
 
-🌐 Portfolio: <a href="https://aashishlabs.github.io">https://aashishlabs.github.io</a><br>
-💼 LinkedIn: <a href="https://www.linkedin.com/in/aashishtelgote/">https://www.linkedin.com/in/aashishtelgote/</a><br>
-✉️ Email: <a href="mailto:aashish.telgote@gmail.com">aashish.telgote@gmail.com</a><br>
+Portfolio: [https://aashishlabs.github.io](https://aashishlabs.github.io)
+
+LinkedIn: [https://www.linkedin.com/in/aashishtelgote/](https://www.linkedin.com/in/aashishtelgote/)
+
+Email: [aashish.telgote@gmail.com](mailto:aashish.telgote@gmail.com)
