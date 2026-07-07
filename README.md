@@ -71,6 +71,6 @@ I am Aashish, an AI-Enable Technical Product Manager with 10+ years of experienc
 
 ## Connect
 
-🌐 Portfolio: aashishlabs.github.io<br>
-💼 LinkedIn: linkedin.com/in/aashishtelgote<br>
-✉️ Email: aashish.telgote@gmail.com<br>
+🌐 Portfolio: <a href="https://aashishlabs.github.io">https://aashishlabs.github.io</a><br>
+💼 LinkedIn: <a href="https://www.linkedin.com/in/aashishtelgote/">https://www.linkedin.com/in/aashishtelgote/</a><br>
+✉️ Email: <a href="mailto:aashish.telgote@gmail.com">aashish.telgote@gmail.com</a><br>
