@@ -1,12 +1,12 @@
 # Aashish Telgote | Technical Product Portfolio
 
-A mobile-first portfolio for an AI-enabled Technical Product Manager working across fintech, digital banking, payments, lending, product strategy, and scalable platform delivery.
+AI-enabled Technical Product Manager building Fintech, Digital Banking, Payments, Lending, Product strategy, and platform products from strategy to scalable execution.
 
 **Live portfolio:** [https://aashishlabs.github.io](https://aashishlabs.github.io)
 
 ## What This Portfolio Communicates
 
-This site is designed to give recruiters, hiring managers, product leaders, and collaborators a fast view of how I think, build, and measure product work.
+This site is designed to give Product Leaders, Collaborators, Recruiters & Hiring Managers a fast view of how I think, build, and measure product work.
 
 It highlights:
 
