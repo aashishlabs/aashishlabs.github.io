@@ -29,6 +29,26 @@
 <meta name="twitter:title" content="Aashish Telgote | AI-Enabled Product Leader – Digital Banking & Fintech">
 <meta name="twitter:description" content="AI-enabled Product Leader with 10+ years building fintech and digital banking products.">
 <meta name="twitter:image" content="https://aashishlabs.github.io/assets/images/favicon/og-image.jpg">
+  <!-- Google Analytics 4 -->
+  <script>
+    window.GA_MEASUREMENT_ID = 'G-290YNS50S0';
+  </script>
+  <script>
+    (() => {
+      const measurementId = window.GA_MEASUREMENT_ID;
+      if (!measurementId || measurementId === 'G-REPLACE_WITH_MEASUREMENT_ID') return;
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId);
+
+      const analyticsScript = document.createElement('script');
+      analyticsScript.async = true;
+      analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+      document.head.appendChild(analyticsScript);
+    })();
+  </script>
 
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -722,6 +742,56 @@
       };
 
       setTheme(document.documentElement.dataset.theme || 'light');
+      const trackPortfolioEvent = (action, params = {}) => {
+        if (typeof window.gtag !== 'function') return;
+        window.gtag('event', action, {
+          event_category: 'portfolio_engagement',
+          ...params
+        });
+      };
+
+      document.addEventListener('click', event => {
+        const link = event.target.closest('a[href]');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        const label = (link.getAttribute('aria-label') || link.textContent || '').trim();
+        const payload = {
+          link_text: label,
+          link_url: link.href,
+          link_location: link.closest('section')?.id || link.closest('footer')?.className || 'navigation'
+        };
+
+        if (href.includes('Aashish_Telgote_Resume.pdf')) {
+          trackPortfolioEvent('resume_download', payload);
+          return;
+        }
+
+        if (href.startsWith('mailto:')) {
+          trackPortfolioEvent('email_click', payload);
+          return;
+        }
+
+        if (href.startsWith('tel:')) {
+          trackPortfolioEvent('phone_click', payload);
+          return;
+        }
+
+        if (href.startsWith('#')) {
+          trackPortfolioEvent('internal_navigation_click', {
+            ...payload,
+            target_section: href.slice(1) || 'home'
+          });
+          return;
+        }
+
+        if (link.hostname && link.hostname !== window.location.hostname) {
+          trackPortfolioEvent('outbound_link_click', {
+            ...payload,
+            outbound_domain: link.hostname
+          });
+        }
+      });
 
       themeToggle.addEventListener('click', () => {
         const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
