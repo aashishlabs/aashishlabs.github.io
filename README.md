@@ -67,3 +67,10 @@ Visit the portfolio here:
 ## About Me
 
 I am Aashish, an AI-Enable Technical Product Manager with 10+ years of experience across Fintech, Digital Banking, Payments, Lending, and AI-enabled product strategy. I work at the intersection of customer problems, business outcomes, platform architecture, and execution discipline.
+
+
+## Connect
+
+🌐 Portfolio: aashishlabs.github.io
+💼 LinkedIn: linkedin.com/in/aashishtelgote
+📄 Resume: Available on the live portfolio
