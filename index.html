@@ -54,7 +54,7 @@
   </script>
 
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1.1" />
 </head>
 <body>
 
@@ -271,7 +271,7 @@
               <span class="tag">Competitive Analysis</span>
               
             </div>
-            <button class="skill-card__more" type="button" aria-expanded="false">More</button>
+            <button class="skill-card__more" type="button" aria-label="Show more skills" aria-expanded="false">...</button>
           </div>
 
           <div class="skill-card reveal">
@@ -291,7 +291,7 @@
               <span class="tag">A/B Testing</span>
               <span class="tag">PDLC / SDLC</span>
             </div>
-            <button class="skill-card__more" type="button" aria-expanded="false">More</button>
+            <button class="skill-card__more" type="button" aria-label="Show more skills" aria-expanded="false">...</button>
           </div>
 
           <div class="skill-card reveal">
@@ -312,7 +312,7 @@
               <span class="tag">Salesforce</span>
               <span class="tag">AI Tools & LLMs</span>
             </div>
-            <button class="skill-card__more" type="button" aria-expanded="false">More</button>
+            <button class="skill-card__more" type="button" aria-label="Show more skills" aria-expanded="false">...</button>
           </div>
 
           <div class="skill-card skill-card--accent reveal">
@@ -334,7 +334,7 @@
               <span class="tag tag--accent">RBI Compliance</span>
               <span class="tag tag--accent">NPCI Ecosystem</span>
             </div>
-            <button class="skill-card__more" type="button" aria-expanded="false">More</button>
+            <button class="skill-card__more" type="button" aria-label="Show more skills" aria-expanded="false">...</button>
           </div>
 
         </div>
@@ -830,7 +830,8 @@
           const card = button.closest('.skill-card');
           const expanded = card.classList.toggle('skill-card--expanded');
           button.setAttribute('aria-expanded', String(expanded));
-          button.textContent = expanded ? 'Less' : 'More';
+          button.setAttribute('aria-label', expanded ? 'Show fewer skills' : 'Show more skills');
+          button.textContent = expanded ? 'Less' : '...';
         });
       });
 
