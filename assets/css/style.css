@@ -1466,24 +1466,73 @@ html[data-theme="dark"] .cert-card__year {
     --container-px: 1.25rem;
   }
 
+  .nav {
+    z-index: 1000;
+  }
+  .nav__inner {
+    min-height: 44px;
+  }
   .nav__links {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100dvh;
     background: rgba(11,22,40,0.98);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
+    justify-content: flex-start;
+    gap: 1.25rem;
     z-index: 90;
     margin: 0;
+    padding: 5.75rem 1.5rem 2rem;
+    overflow-y: auto;
   }
   .nav__links--open { display: flex; }
-  .nav__links a { font-size: 1.375rem; color: rgba(255,255,255,0.85); }
+  .nav__links a { font-size: 1.2rem; color: rgba(255,255,255,0.85); }
+  .nav__links--open a,
+  .nav--scrolled .nav__links--open a,
+  html[data-theme="dark"] .nav--scrolled .nav__links--open a {
+    color: rgba(255,255,255,0.88);
+  }
+  .nav__links--open a.active,
+  .nav__links--open a:hover,
+  .nav--scrolled .nav__links--open a.active,
+  .nav--scrolled .nav__links--open a:hover {
+    color: #ffffff;
+  }
+  .nav__links--open .nav__resume,
+  .nav--scrolled .nav__links--open .nav__resume,
+  html[data-theme="dark"] .nav--scrolled .nav__links--open .nav__resume {
+    color: #ffffff !important;
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.28) !important;
+  }
   .nav__links a::after { display: none; }
   /* btn--nav removed */
   .theme-toggle { margin-left: auto; }
-  .nav__toggle { display: flex; margin-left: 0; }
+  .nav__toggle {
+    display: flex;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    margin-left: 0;
+    padding: 0;
+    position: relative;
+    z-index: 130;
+  }
+  .nav--menu-open .nav__toggle,
+  .nav--scrolled.nav--menu-open .nav__toggle,
+  html[data-theme="dark"] .nav--scrolled.nav--menu-open .nav__toggle {
+    color: #ffffff;
+    opacity: 1;
+  }
+  .nav--menu-open .theme-toggle {
+    position: relative;
+    z-index: 130;
+  }
 
   .hero { padding-top: 6rem; padding-bottom: 3.5rem; min-height: auto; }
   .hero__inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; }

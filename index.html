@@ -54,7 +54,7 @@
   </script>
 
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.1" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1.4" />
 </head>
 <body>
 
@@ -63,10 +63,11 @@
   ══════════════════════════════════════ -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#" class="nav__logo" aria-label="Home">
+      <a href="#hero" class="nav__logo" aria-label="Home">
         Aashish<span>Telgote</span>
       </a>
       <nav class="nav__links" id="navLinks" aria-label="Primary navigation">
+        <a href="#hero">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
@@ -808,21 +809,27 @@
       const toggle = document.getElementById('navToggle');
       const navLinks = document.getElementById('navLinks');
 
+      const closeMobileNav = () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('nav--menu-open');
+        navLinks.classList.remove('nav__links--open');
+        document.body.classList.remove('no-scroll');
+      };
+
       toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        navLinks.classList.toggle('nav__links--open');
-        document.body.classList.toggle('no-scroll');
+        const shouldOpen = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(shouldOpen));
+        nav.classList.toggle('nav--menu-open', shouldOpen);
+        navLinks.classList.toggle('nav__links--open', shouldOpen);
+        document.body.classList.toggle('no-scroll', shouldOpen);
       });
 
       // Close mobile nav when a link is clicked
       navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          toggle.setAttribute('aria-expanded', 'false');
-          navLinks.classList.remove('nav__links--open');
-          document.body.classList.remove('no-scroll');
-        });
+        link.addEventListener('click', closeMobileNav);
       });
+
+      window.addEventListener('hashchange', closeMobileNav);
 
       // Skills: mobile expand controls
       document.querySelectorAll('.skill-card__more').forEach(button => {
