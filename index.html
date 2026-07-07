@@ -30,24 +30,15 @@
 <meta name="twitter:description" content="AI-enabled Product Leader with 10+ years building fintech and digital banking products.">
 <meta name="twitter:image" content="https://aashishlabs.github.io/assets/images/favicon/og-image.jpg">
   <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-290YNS50S0"></script>
   <script>
-    window.GA_MEASUREMENT_ID = 'G-290YNS50S0';
-  </script>
-  <script>
-    (() => {
-      const measurementId = window.GA_MEASUREMENT_ID;
-      if (!measurementId || measurementId === 'G-REPLACE_WITH_MEASUREMENT_ID') return;
-
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag(){ window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', measurementId);
-
-      const analyticsScript = document.createElement('script');
-      analyticsScript.async = true;
-      analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
-      document.head.appendChild(analyticsScript);
-    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.analyticsDebug = new URLSearchParams(window.location.search).has('ga_debug');
+    gtag('js', new Date());
+    gtag('config', 'G-290YNS50S0', {
+      debug_mode: window.analyticsDebug
+    });
   </script>
 
   <!-- Preconnect for performance -->
@@ -746,6 +737,8 @@
         if (typeof window.gtag !== 'function') return;
         window.gtag('event', action, {
           event_category: 'portfolio_engagement',
+          debug_mode: window.analyticsDebug,
+          transport_type: 'beacon',
           ...params
         });
       };
@@ -763,7 +756,16 @@
         };
 
         if (href.includes('Aashish_Telgote_Resume.pdf')) {
-          trackPortfolioEvent('resume_download', payload);
+          trackPortfolioEvent('resume_download', {
+            ...payload,
+            file_name: 'Aashish_Telgote_Resume.pdf',
+            file_extension: 'pdf'
+          });
+          trackPortfolioEvent('file_download', {
+            ...payload,
+            file_name: 'Aashish_Telgote_Resume.pdf',
+            file_extension: 'pdf'
+          });
           return;
         }
 
