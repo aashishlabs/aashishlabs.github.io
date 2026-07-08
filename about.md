@@ -1,6 +1,6 @@
 # About Me
 
-I'm Aashish Telgote, a Senior Product Manager with 10+ years of experience building Digital Banking, Payments, Lending, and FinTech products.
+I'm Aashish Telgote, an AI-Enabled Senior Product Manager with 10+ years of experience building Digital Banking, Payments, Lending, and FinTech products.
 
 Throughout my career, I have worked with banks, fintechs, and payment companies to build scalable customer-centric products.
 
