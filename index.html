@@ -57,7 +57,7 @@
   </script>
 
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.4" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6" />
 </head>
 <body>
 
@@ -99,7 +99,7 @@
         </span>
       </button>
 
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+      <button type="button" class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -504,30 +504,13 @@
         <h2 class="section-heading">Impact highlights</h2>
         <p class="section-sub">Selected case studies that show how I think, build, and measure product work.</p>
 
-        <div class="projects__grid">
+        <div class="projects__carousel" data-project-carousel>
+          <button class="projects__arrow projects__arrow--previous" type="button" data-project-direction="-1" aria-label="Show previous project" aria-controls="projectsViewport">‹</button>
+          <button class="projects__arrow projects__arrow--next" type="button" data-project-direction="1" aria-label="Show next project" aria-controls="projectsViewport">›</button>
+          <div class="projects__viewport" id="projectsViewport" data-carousel-viewport aria-label="Project case studies moving continuously. Hover, focus, or touch a card to pause.">
+            <div class="projects__grid" data-carousel-track>
 
-          <div class="project-card reveal">
-            <div class="project-card__body">
-              <div class="project-card__tag">Digital Lending · AI</div>
-              <h3 class="project-card__title">AI-Powered Credit Decisioning Engine</h3>
-              <p class="project-card__org">L&amp;T Finance · CDO's Office</p>
-              <p class="project-card__desc">
-                Led the product workstream for an AI-powered underwriting and credit decisioning engine for rural lending products. Defined data inputs, decision logic, and integration with the existing LOS/LMS stack. Collaborated with data science, engineering, and risk teams to bring an automated decisioning system from concept to production.
-              </p>
-            </div>
-            <div class="project-card__impact">
-              <div class="impact-item">
-                <span class="impact-val">40%</span>
-                <span class="impact-label">Reduction in loan disbursal TAT</span>
-              </div>
-              <div class="impact-item">
-                <span class="impact-val">50%</span>
-                <span class="impact-label">Faster product delivery via Agile</span>
-              </div>
-            </div>
-          </div>
-
-          <a class="project-card reveal" href="projects/digital-banking/neo-banking-payments.html" aria-label="View Neo-Banking and Payments Platform case study">
+          <a class="project-card" href="projects/digital-banking/neo-banking-payments.html" aria-label="View Neo-Banking and Payments Platform case study">
             <div class="project-card__body">
               <div class="project-card__tag">FinTech · 0→1</div>
               <h3 class="project-card__title">Neo-Banking &amp; Payments Platform</h3>
@@ -548,7 +531,27 @@
             </div>
           </a>
 
-          <div class="project-card reveal">
+          <a class="project-card" href="projects/ai/credit-decisioning-engine.html" aria-label="View AI-Powered Credit Decisioning Engine case study">
+            <div class="project-card__body">
+              <div class="project-card__tag">Digital Lending · AI</div>
+              <h3 class="project-card__title">AI-Powered Credit Decisioning Engine</h3>
+              <p class="project-card__org">L&amp;T Finance · CDO's Office</p>
+              <p class="project-card__desc">
+                Led the product workstream for an AI-powered underwriting and credit decisioning engine for rural lending products. Defined data inputs, decision logic, and integration with the existing LOS/LMS stack. Collaborated with data science, engineering, and risk teams to bring an automated decisioning system from concept to production.
+              </p>
+            </div>
+            <div class="project-card__impact">
+              <div class="impact-item">
+                <span class="impact-val">40%</span>
+                <span class="impact-label">Reduction in loan disbursal TAT</span>
+              </div>
+              <div class="impact-item">
+                <span class="impact-val">50%</span>
+                <span class="impact-label">Faster product delivery via Agile</span>
+              </div>
+            </div>
+          </a>
+          <a class="project-card" href="projects/payments/centralized-compliance-reporting.html" aria-label="View Centralized Payments Reporting System case study">
             <div class="project-card__body">
               <div class="project-card__tag">Banking · Compliance</div>
               <h3 class="project-card__title">Centralized PPI &amp; Payments Reporting System</h3>
@@ -567,8 +570,50 @@
                 <span class="impact-label">Corporate clients on the Prepaid platform</span>
               </div>
             </div>
-          </div>
+          </a>
+          <a class="project-card" href="projects/digital-banking/banking-connect.html" aria-label="View Banking Connect pilot case study">
+            <div class="project-card__body">
+              <div class="project-card__tag">Net Banking 2.0 · Pilot</div>
+              <h3 class="project-card__title">Banking Connect</h3>
+              <p class="project-card__org">NTT DATA · NPCI Ecosystem</p>
+              <p class="project-card__desc">
+                Ran the pilot for Banking Connect, NPCI Bharat BillPay's interoperable Net Banking 2.0 initiative, while working with NTT DATA. Coordinated pilot execution, stakeholder readiness, end-to-end validation, issue tracking, and feedback across a multi-party banking ecosystem.
+              </p>
+            </div>
+            <div class="project-card__impact">
+              <div class="impact-item">
+                <span class="impact-val">Pilot</span>
+                <span class="impact-label">Execution led at NTT DATA</span>
+              </div>
+              <div class="impact-item">
+                <span class="impact-val">NPCI</span>
+                <span class="impact-label">Interoperable banking initiative</span>
+              </div>
+            </div>
+          </a>
 
+          <a class="project-card" href="projects/payments/upi-mandates-asba.html" aria-label="View UPI AutoPay, ASBA, and Bima-ASBA case study">
+            <div class="project-card__body">
+              <div class="project-card__tag">UPI Mandates · Recurring</div>
+              <h3 class="project-card__title">UPI AutoPay, ASBA &amp; Bima-ASBA</h3>
+              <p class="project-card__org">NTT DATA · Payment Solutions</p>
+              <p class="project-card__desc">
+                Implemented and worked on UPI auto-collect and recurring payment capabilities, UPI Block/ASBA, and Bima-ASBA solutions. Contributed across mandate creation, customer authorization, recurring debit and blocked-fund journeys, merchant integration, callbacks, and operational readiness.
+              </p>
+            </div>
+            <div class="project-card__impact">
+              <div class="impact-item">
+                <span class="impact-val">3</span>
+                <span class="impact-label">Mandate-led payment capabilities</span>
+              </div>
+              <div class="impact-item">
+                <span class="impact-val">UPI</span>
+                <span class="impact-label">Recurring and blocked-fund flows</span>
+              </div>
+            </div>
+          </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -860,6 +905,144 @@
       }, { rootMargin: '-30% 0px -60% 0px' });
 
       sections.forEach(s => sectionObserver.observe(s));
+
+      // ── Projects: seamless auto-flow + manual scrolling ──
+      const projectCarousel = document.querySelector('[data-project-carousel]');
+
+      if (projectCarousel) {
+        const viewport = projectCarousel.querySelector('[data-carousel-viewport]');
+        const track = projectCarousel.querySelector('[data-carousel-track]');
+        const originalCards = Array.from(track.querySelectorAll('.project-card'));
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const loopDuration = 34000;
+        let loopDistance = 0;
+        let resizeFrame;
+        let lastFrameTime;
+        let resumeAt = 0;
+        let isHovered = false;
+        let isFocused = false;
+        let isPointerDown = false;
+        let isMouseDragging = false;
+        let dragStartX = 0;
+        let dragStartScroll = 0;
+        let draggedDistance = 0;
+
+        const appendCloneSet = () => {
+          originalCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            clone.tabIndex = -1;
+            track.appendChild(clone);
+          });
+        };
+        const updateContinuousLoop = () => {
+          const gap = parseFloat(getComputedStyle(track).gap) || 0;
+          loopDistance = originalCards.reduce((total, card) => total + card.getBoundingClientRect().width, 0) + (gap * originalCards.length);
+          if (!reducedMotion.matches) {
+            while (track.scrollWidth < viewport.clientWidth + loopDistance) appendCloneSet();
+          }
+        };
+        const pauseTemporarily = (duration = 3500) => {
+          resumeAt = performance.now() + duration;
+        };
+        const shouldAutoScroll = time => !reducedMotion.matches && !document.hidden && !isHovered && !isFocused && !isPointerDown && time >= resumeAt;
+        const runContinuousLoop = time => {
+          if (lastFrameTime === undefined) lastFrameTime = time;
+          const elapsed = Math.min(time - lastFrameTime, 64);
+          lastFrameTime = time;
+
+          if (loopDistance > 0) {
+            while (viewport.scrollLeft >= loopDistance) viewport.scrollLeft -= loopDistance;
+            if (shouldAutoScroll(time)) viewport.scrollLeft += (loopDistance / loopDuration) * elapsed;
+          }
+          window.requestAnimationFrame(runContinuousLoop);
+        };
+
+        appendCloneSet();
+        window.requestAnimationFrame(updateContinuousLoop);
+        window.requestAnimationFrame(runContinuousLoop);
+        window.addEventListener('resize', () => {
+          window.cancelAnimationFrame(resizeFrame);
+          resizeFrame = window.requestAnimationFrame(updateContinuousLoop);
+        }, { passive: true });
+
+        projectCarousel.querySelectorAll('[data-project-direction]').forEach(button => {
+          button.addEventListener('click', () => {
+            const direction = Number(button.dataset.projectDirection);
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
+            const cardStep = originalCards[0].getBoundingClientRect().width + gap;
+            pauseTemporarily(4500);
+            if (direction < 0 && viewport.scrollLeft < cardStep && loopDistance > 0) {
+              viewport.scrollLeft += loopDistance;
+            }
+            viewport.scrollBy({
+              left: direction * cardStep,
+              behavior: reducedMotion.matches ? 'auto' : 'smooth'
+            });
+          });
+        });
+
+        projectCarousel.addEventListener('pointerenter', event => {
+          if (event.pointerType === 'mouse') isHovered = true;
+        });
+        projectCarousel.addEventListener('pointerleave', event => {
+          if (event.pointerType === 'mouse') isHovered = false;
+        });
+        viewport.addEventListener('focusin', () => { isFocused = true; });
+        viewport.addEventListener('focusout', () => {
+          window.setTimeout(() => { isFocused = viewport.contains(document.activeElement); }, 0);
+        });
+        viewport.addEventListener('pointerdown', event => {
+          isPointerDown = true;
+          pauseTemporarily();
+          if (event.pointerType === 'mouse' && event.button === 0) {
+            isMouseDragging = true;
+            dragStartX = event.clientX;
+            dragStartScroll = viewport.scrollLeft;
+            draggedDistance = 0;
+          }
+        });
+        viewport.addEventListener('pointermove', event => {
+          if (!isMouseDragging) return;
+          const distance = event.clientX - dragStartX;
+          draggedDistance = Math.max(draggedDistance, Math.abs(distance));
+          if (draggedDistance > 4) {
+            if (!viewport.hasPointerCapture(event.pointerId)) {
+              viewport.setPointerCapture(event.pointerId);
+              viewport.classList.add('is-dragging');
+            }
+            viewport.scrollLeft = dragStartScroll - distance;
+            event.preventDefault();
+          }
+        });
+        const finishPointerInteraction = event => {
+          isPointerDown = false;
+          pauseTemporarily();
+          if (isMouseDragging) {
+            isMouseDragging = false;
+            viewport.classList.remove('is-dragging');
+            if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+            const focusedElement = document.activeElement;
+            if (draggedDistance > 6 && focusedElement instanceof HTMLElement && viewport.contains(focusedElement)) {
+              focusedElement.blur();
+            }
+          }
+        };
+        viewport.addEventListener('pointerup', finishPointerInteraction);
+        viewport.addEventListener('pointercancel', finishPointerInteraction);
+        viewport.addEventListener('touchmove', () => pauseTemporarily(), { passive: true });
+        viewport.addEventListener('wheel', event => {
+          if (Math.abs(event.deltaX) > 0 || event.shiftKey) pauseTemporarily();
+        }, { passive: true });
+        viewport.addEventListener('dragstart', event => event.preventDefault());
+        viewport.addEventListener('click', event => {
+          if (draggedDistance > 6) {
+            event.preventDefault();
+            event.stopPropagation();
+            draggedDistance = 0;
+          }
+        }, true);
+      }
 
       // ── Scroll reveal ───────────────────────────
       const revealEls = document.querySelectorAll('.reveal');
