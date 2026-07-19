@@ -916,6 +916,7 @@
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         const loopDuration = 34000;
         let loopDistance = 0;
+        let autoScrollPosition = 0;
         let resizeFrame;
         let lastFrameTime;
         let resumeAt = 0;
@@ -942,6 +943,7 @@
           if (!reducedMotion.matches) {
             while (track.scrollWidth < viewport.clientWidth + loopDistance) appendCloneSet();
           }
+          autoScrollPosition = viewport.scrollLeft;
         };
         const pauseTemporarily = (duration = 3500) => {
           resumeAt = performance.now() + duration;
@@ -954,7 +956,13 @@
 
           if (loopDistance > 0) {
             while (viewport.scrollLeft >= loopDistance) viewport.scrollLeft -= loopDistance;
-            if (shouldAutoScroll(time)) viewport.scrollLeft += (loopDistance / loopDuration) * elapsed;
+            if (shouldAutoScroll(time)) {
+              autoScrollPosition += (loopDistance / loopDuration) * elapsed;
+              while (autoScrollPosition >= loopDistance) autoScrollPosition -= loopDistance;
+              viewport.scrollLeft = autoScrollPosition;
+            } else {
+              autoScrollPosition = viewport.scrollLeft;
+            }
           }
           window.requestAnimationFrame(runContinuousLoop);
         };
