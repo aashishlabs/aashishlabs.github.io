@@ -924,6 +924,7 @@
         let isPointerDown = false;
         let isMouseDragging = false;
         let dragStartX = 0;
+        let dragStartY = 0;
         let dragStartScroll = 0;
         let draggedDistance = 0;
 
@@ -995,17 +996,19 @@
         viewport.addEventListener('pointerdown', event => {
           isPointerDown = true;
           pauseTemporarily();
+          dragStartX = event.clientX;
+          dragStartY = event.clientY;
+          draggedDistance = 0;
           if (event.pointerType === 'mouse' && event.button === 0) {
             isMouseDragging = true;
-            dragStartX = event.clientX;
             dragStartScroll = viewport.scrollLeft;
-            draggedDistance = 0;
           }
         });
         viewport.addEventListener('pointermove', event => {
-          if (!isMouseDragging) return;
           const distance = event.clientX - dragStartX;
-          draggedDistance = Math.max(draggedDistance, Math.abs(distance));
+          const verticalDistance = event.clientY - dragStartY;
+          draggedDistance = Math.max(draggedDistance, Math.abs(distance), Math.abs(verticalDistance));
+          if (!isMouseDragging) return;
           if (draggedDistance > 4) {
             if (!viewport.hasPointerCapture(event.pointerId)) {
               viewport.setPointerCapture(event.pointerId);
@@ -1018,14 +1021,18 @@
         const finishPointerInteraction = event => {
           isPointerDown = false;
           pauseTemporarily();
+          const shouldReleaseFocus = draggedDistance > 6;
           if (isMouseDragging) {
             isMouseDragging = false;
             viewport.classList.remove('is-dragging');
             if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
-            const focusedElement = document.activeElement;
-            if (draggedDistance > 6 && focusedElement instanceof HTMLElement && viewport.contains(focusedElement)) {
-              focusedElement.blur();
-            }
+          }
+          if (shouldReleaseFocus) {
+            window.setTimeout(() => {
+              const focusedElement = document.activeElement;
+              if (focusedElement instanceof HTMLElement && viewport.contains(focusedElement)) focusedElement.blur();
+              isFocused = viewport.contains(document.activeElement);
+            }, 0);
           }
         };
         viewport.addEventListener('pointerup', finishPointerInteraction);
