@@ -945,7 +945,7 @@
           }
           autoScrollPosition = viewport.scrollLeft;
         };
-        const pauseTemporarily = (duration = 3500) => {
+        const pauseTemporarily = (duration = 2000) => {
           resumeAt = performance.now() + duration;
         };
         const shouldAutoScroll = time => !reducedMotion.matches && !document.hidden && !isHovered && !isFocused && !isPointerDown && time >= resumeAt;
@@ -980,7 +980,7 @@
             const direction = Number(button.dataset.projectDirection);
             const gap = parseFloat(getComputedStyle(track).gap) || 0;
             const cardStep = originalCards[0].getBoundingClientRect().width + gap;
-            pauseTemporarily(4500);
+            pauseTemporarily();
             if (direction < 0 && viewport.scrollLeft < cardStep && loopDistance > 0) {
               viewport.scrollLeft += loopDistance;
             }
