@@ -8,7 +8,6 @@
   
   <title>Aashish Telgote | AI-Enabled Product Leader – Digital Banking & Fintech</title>
   <meta name="author" content="Aashish Telgote">
-  <meta property="og:type" content="Portfolio Website">
 
   <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
@@ -224,7 +223,7 @@
                 <span class="bring-icon" aria-hidden="true">🤖</span>
                 <div>
                   <strong>AI-Enabled Product Strategy</strong>
-                  <p>AI-powered underwriting, credit decisioning, and integrating ML models into financial workflows.</p>
+                  <p>Contributed to a cross-functional AI-powered underwriting and credit decisioning initiative through product and business inputs, process alignment, and stakeholder coordination.</p>
                 </div>
               </li>
               <li class="bring-item">
@@ -883,6 +882,16 @@
         if (!link) return;
 
         const href = link.getAttribute('href') || '';
+        if (href.startsWith('mailto:')) {
+          trackPortfolioEvent('contact_click', { contact_type: 'email' });
+          return;
+        }
+
+        if (href.startsWith('tel:')) {
+          trackPortfolioEvent('contact_click', { contact_type: 'phone' });
+          return;
+        }
+
         const label = (link.getAttribute('aria-label') || link.textContent || '').trim();
         const payload = {
           link_text: label,
@@ -904,16 +913,6 @@
           return;
         }
 
-        if (href.startsWith('mailto:')) {
-          trackPortfolioEvent('email_click', payload);
-          return;
-        }
-
-        if (href.startsWith('tel:')) {
-          trackPortfolioEvent('phone_click', payload);
-          return;
-        }
-
         if (href.startsWith('#')) {
           trackPortfolioEvent('internal_navigation_click', {
             ...payload,
@@ -924,8 +923,8 @@
 
         if (link.hostname && link.hostname !== window.location.hostname) {
           trackPortfolioEvent('outbound_link_click', {
-            ...payload,
-            outbound_domain: link.hostname
+            outbound_domain: link.hostname,
+            link_location: payload.link_location
           });
         }
       });
