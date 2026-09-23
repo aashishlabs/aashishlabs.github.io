@@ -1463,7 +1463,7 @@ a.project-card {
 .edu__block { margin-top: 3.5rem; }
 .edu__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.125rem;
   margin-top: 1.25rem;
 }
@@ -1609,6 +1609,9 @@ a.project-card {
   .about__grid { gap: 3rem; }
   .portrait-wrapper { max-width: 300px; }
   .hero__inner { grid-template-columns: 1.3fr 1fr; gap: 2.5rem; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero__metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 900px) {
   .skills__grid { grid-template-columns: 1fr; }
