@@ -971,14 +971,31 @@
       window.addEventListener('hashchange', closeMobileNav);
 
       // Skills: expand controls
+      const desktopSkillsMedia = window.matchMedia('(min-width: 901px)');
+      const updateSkillButton = button => {
+        const card = button.closest('.skill-card');
+        const expanded = card.classList.contains('skill-card--expanded');
+        const desktopCollapsible = desktopSkillsMedia.matches && card.classList.contains('skill-card--desktop-collapsible');
+        button.setAttribute('aria-expanded', String(expanded));
+        if (desktopCollapsible && !expanded) {
+          const hiddenCount = card.querySelectorAll('.tag--desktop-collapsed-hidden').length;
+          button.setAttribute('aria-label', `View ${hiddenCount} more skills`);
+          button.textContent = `View ${hiddenCount} more skills ↓`;
+        } else {
+          button.setAttribute('aria-label', expanded ? 'Show fewer skills' : 'Show more skills');
+          button.textContent = expanded ? desktopCollapsible ? 'Show less ↑' : 'Show less' : 'Show more';
+        }
+      };
       document.querySelectorAll('.skill-card__more').forEach(button => {
+        updateSkillButton(button);
         button.addEventListener('click', () => {
           const card = button.closest('.skill-card');
-          const expanded = card.classList.toggle('skill-card--expanded');
-          button.setAttribute('aria-expanded', String(expanded));
-          button.setAttribute('aria-label', expanded ? 'Show fewer skills' : 'Show more skills');
-          button.textContent = expanded ? 'Show less' : 'Show more';
+          card.classList.toggle('skill-card--expanded');
+          updateSkillButton(button);
         });
+      });
+      desktopSkillsMedia.addEventListener('change', () => {
+        document.querySelectorAll('.skill-card__more').forEach(updateSkillButton);
       });
 
       // ── Nav: active link on scroll ──────────────

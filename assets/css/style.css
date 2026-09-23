@@ -762,15 +762,30 @@ html[data-theme="dark"] .cert-card__year {
   padding: 1rem 1.125rem;
   background: #fff;
   border: 1px solid #E2E8F0;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(79,70,229,0.18);
   border-radius: 0.75rem;
   border-radius: var(--radius);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 .bring-item:hover {
   border-color: #C7D2FE;
-  border-color: var(--accent-border);
+  border-color: rgba(79,70,229,0.38);
   box-shadow: 0 4px 16px rgba(79,70,229,0.07);
+}
+html[data-theme="dark"] .bring-item {
+  border-color: var(--accent-border);
+}
+html[data-theme="dark"] .bring-item:hover {
+  border-color: rgba(129,140,248,0.52);
+}
+@media (hover: hover) and (pointer: fine) {
+  .bring-item:hover {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.09);
+    transform: translateX(5px);
+  }
+  html[data-theme="dark"] .bring-item:hover {
+    box-shadow: var(--shadow);
+  }
 }
 .bring-icon {
   font-size: 1.125rem;
@@ -912,6 +927,19 @@ html[data-theme="dark"] .cert-card__year {
     right: 1.5rem;
     bottom: 1.25rem;
     margin: 0;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--accent-border);
+    background: var(--accent-light);
+    color: var(--accent);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .skills__grid > .skill-card--desktop-collapsible .skill-card__more:hover {
+    border-color: rgba(79,70,229,0.42);
+    background: rgba(79,70,229,0.12);
+  }
+  html[data-theme="dark"] .skills__grid > .skill-card--desktop-collapsible .skill-card__more:hover {
+    border-color: rgba(129,140,248,0.55);
+    background: rgba(129,140,248,0.26);
   }
   .skills__grid > .skill-card:not(.skill-card--desktop-collapsible) .skill-card__more { display: none; }
   .tag--long {
