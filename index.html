@@ -44,9 +44,11 @@
   </script>
 
   <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@600,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <script>
     (() => {
       const storedTheme = localStorage.getItem('theme');
@@ -174,11 +176,12 @@
     ══════════════════════════════════════ -->
     <section class="section section--light" id="about" aria-label="About">
       <div class="container">
-        <p class="section-label">About</p>
+        <p class="section-label section-label--home">About</p>
         <div class="about__grid">
 
           <div class="about__bio">
             <h2 class="section-heading">Turning complexity into clarity — one product at a time.</h2>
+            <p class="about__hello">Hello World — this is Aashish.</p>
             <p>I'm a strategic, AI-Enabled Product Leader with deep experience across India's fintech, digital banking, payments and lending landscape. My journey spans the spectrum — from early software engineering at PayU/Citrus to product and digital transformation leadership across banking, fintech and payments.</p>
             <p>My edge is bridging business strategy with technical execution. I understand APIs and system integrations as clearly as I understand customer journeys and regulatory frameworks. This lets me ship faster, align stakeholders better, and build products that perform reliably at scale.</p>
             <p>I've worked across 0→1 product creation and 1→N scaling, partnering with banks, fintechs and NPCI ecosystem stakeholders across business, technology, operations, risk and compliance to deliver measurable product and business outcomes.</p>
@@ -252,7 +255,7 @@
     ══════════════════════════════════════ -->
     <section class="section" id="skills" aria-label="Skills">
       <div class="container">
-        <p class="section-label">Skills</p>
+        <p class="section-label section-label--home">Skills</p>
         <h2 class="section-heading">What I bring to the table (My Armor & Suit)</h2>
         <div class="skills__grid">
 
@@ -388,7 +391,7 @@
     ══════════════════════════════════════ -->
     <section class="section section--light" id="experience" aria-label="Work Experience">
       <div class="container">
-        <p class="section-label">Experience</p>
+        <p class="section-label section-label--home">Experience</p>
         <h2 class="section-heading">Where I've built things</h2>
 
         <div class="timeline" role="list">
@@ -561,7 +564,7 @@
     ══════════════════════════════════════ -->
     <section class="section" id="case-studies" aria-label="Projects and Case Studies">
       <div class="container">
-        <p class="section-label">Projects</p>
+        <p class="section-label section-label--home">Projects</p>
         <h2 class="section-heading">Impact highlights</h2>
         <p class="section-sub">Selected case studies that show how I think, build, and measure product work.</p>
 
@@ -704,7 +707,7 @@
     ══════════════════════════════════════ -->
     <section class="section section--light" id="certifications" aria-label="Certifications">
       <div class="container">
-        <p class="section-label">Certifications</p>
+        <p class="section-label section-label--home">Certifications</p>
         <h2 class="section-heading">Continuous learning</h2>
 
         <div class="certs__grid">
@@ -761,7 +764,7 @@
 
         <!-- Education -->
         <div class="edu__block">
-          <p class="section-label" style="margin-top: 3.5rem;">Education</p>
+          <p class="section-label section-label--home" style="margin-top: 3.5rem;">Education</p>
           <div class="edu__grid">
             <div class="edu-card reveal">
               <div class="edu-card__year">2014–2015</div>
@@ -788,7 +791,7 @@
     ══════════════════════════════════════ -->
     <section class="section section--dark" id="contact" aria-label="Contact">
       <div class="container contact__inner">
-        <p class="section-label section-label--light">Contact</p>
+        <p class="section-label section-label--light section-label--home">Contact</p>
         <h2 class="section-heading section-heading--light">Building a payments, lending, or digital banking product that needs scale, reliability, or regulatory depth? Let's talk.</h2>
 
 
@@ -978,9 +981,8 @@
         const desktopCollapsible = desktopSkillsMedia.matches && card.classList.contains('skill-card--desktop-collapsible');
         button.setAttribute('aria-expanded', String(expanded));
         if (desktopCollapsible && !expanded) {
-          const hiddenCount = card.querySelectorAll('.tag--desktop-collapsed-hidden').length;
-          button.setAttribute('aria-label', `View ${hiddenCount} more skills`);
-          button.textContent = `View ${hiddenCount} more skills ↓`;
+          button.setAttribute('aria-label', 'View more skills');
+          button.textContent = 'View more ↓';
         } else {
           button.setAttribute('aria-label', expanded ? 'Show fewer skills' : 'Show more skills');
           button.textContent = expanded ? desktopCollapsible ? 'Show less ↑' : 'Show less' : 'Show more';
